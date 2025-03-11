@@ -1,0 +1,61 @@
+{
+	"project_context": {
+		"description": "Este es un proyecto de Next.js que utiliza Typescript como lenguaje principal, TailwindCSS para el estilo, Sequelize como ORM, Sequelize-cli para la creación de modelos y migraciones, y PostgreSQL como base de datos",
+		"frameworks": [
+			"Next.js",
+			"TypeScript",
+			"TailwindCSS",
+			"Sequelize",
+			"Sequelize-cli",
+			"PostgreSQL"
+		],
+		"conventions": {
+			"code_style": "Seguimos las mejores prácticas de TypeScript, React y Next.js",
+			"naming": "camelCase para variables y funciones, PascalCase para componentes, y SCREAMING_SNAKE_CASE para constantes",
+			"file_structure": {
+				"public": "Archivos estáticos",
+				"src": {
+					"app": {
+						"api": "Rutas de API",
+						"[ruta1]": "Páginas de la aplicación",
+						"[ruta2]": "Páginas de la aplicación",
+						"[ruta3]": "Páginas de la aplicación",
+						"[ruta4]": "Páginas de la aplicación",
+						"[ruta5]": "Páginas de la aplicación",
+						"[ruta6]": "Páginas de la aplicación"
+					},
+					"components": "Componentes reutilizables",
+					"hooks": "Hooks de la aplicación",
+					"styles": "Estilos de la aplicación",
+					"types": "Definiciones de tipos",
+					"libs": "Librerías externas",
+					"constants": "Constantes de la aplicación",
+					"utils": "Utilidades de la aplicación",
+					"services": "Servicios de la aplicación, lógica de negocio",
+					"db": {
+						"config": "Configuración de Sequelize-CLI",
+						"models": "Modelos de Sequelize",
+						"migrations": "Migraciones de Sequelize",
+						"seeders": "Seeders de Sequelize",
+						"database": "Configuración de la base de datos"
+					},
+					"tests": "Pruebas de la aplicación"
+				}
+			}
+		}
+	},
+	"assistant_preferences": {
+		"language": "spanish",
+		"code_comments": "spanish",
+		"documentation": "spanish",
+		"style": {
+			"formality": "profesional",
+			"technical_level": "intermedio-avanzado"
+		}
+	},
+	"custom_commands": {
+		"dev": "npm run dev",
+		"build": "npm run build",
+		"test": "npm run test"
+	}
+}
