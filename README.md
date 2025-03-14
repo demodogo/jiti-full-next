@@ -26,14 +26,14 @@ JITI es una aplicación moderna de gestión de proyectos potenciada por IA que t
 
 ## 🚀 Instalación
 
-1. Clona el repositorio:
+1.Clona el repositorio:
 
 ```bash
 git clone https://github.com/demodogo/jiti-fs-next.git
 cd jiti-fs-next
 ```
 
-2. Instala las dependencias:
+2.Instala las dependencias:
 
 ```bash
 npm install
@@ -41,13 +41,13 @@ npm install
 pnpm install
 ```
 
-3. Crea un archivo `.env.local` con las variables de entorno necesarias:
+3.Crea un archivo `.env.local` con las variables de entorno necesarias:
 
 ```bash
 cp .env.example .env.local
 ```
 
-4. Inicia el servidor de desarrollo:
+4.Inicia el servidor de desarrollo:
 
 ```bash
 npm run dev
@@ -67,7 +67,7 @@ La aplicación estará disponible en [http://localhost:3000](http://localhost:30
 
 ## 📁 Estructura del Proyecto
 
-```
+```plaintext
 jiti-fs-next/
 ├── src/
 │   ├── app/              # App router y configuración principal

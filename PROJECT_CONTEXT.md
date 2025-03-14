@@ -26,22 +26,22 @@ JITI es una aplicación web que permite a los usuarios crear boards (o tableros)
 - Invitados a los boards (los usuarios invitados pueden ver los boards, pero no editar ninguna tarea que no le esté asignada).
 - Responsable de cada board (el responsable puede ver el board, agregar tareas, asignar responsables a las tareas y ver el progreso de las tareas).
 - Preferencias de usuario (boards):
-    - Asignar colores a cada board.
-    - Asignar iconos a cada board.
-    - Asignar imagen de fondo a cada board.
-    - Asignar fecha de creación, fecha de actualización y fecha de eliminación a cada board.
-    - Asignar fecha de inicio y fecha de fin a cada tarea.
-    - Asignar prioridad a cada tarea.
-    - Privacidad: público, privado, solo invitados.
+  - Asignar colores a cada board.
+  - Asignar iconos a cada board.
+  - Asignar imagen de fondo a cada board.
+  - Asignar fecha de creación, fecha de actualización y fecha de eliminación a cada board.
+  - Asignar fecha de inicio y fecha de fin a cada tarea.
+  - Asignar prioridad a cada tarea.
+  - Privacidad: público, privado, solo invitados.
 - Preferencias de usuario (tareas):
-    - Asignar colores a cada tarea.
-    - Asignar iconos a cada tarea.
-    - Asignar imagen de fondo a cada tarea.
-    - Asignar fecha de creación, fecha de actualización y fecha de eliminación a cada tarea.
-    - Asignar fecha de inicio y fecha de fin a cada tarea.
-    - Asignar prioridad a cada tarea.
+  - Asignar colores a cada tarea.
+  - Asignar iconos a cada tarea.
+  - Asignar imagen de fondo a cada tarea.
+  - Asignar fecha de creación, fecha de actualización y fecha de eliminación a cada tarea.
+  - Asignar fecha de inicio y fecha de fin a cada tarea.
+  - Asignar prioridad a cada tarea.
 - Preferencias de usuario (usuarios):
-    - Privacidad de perfil: público, privado, sólo amigos.
+  - Privacidad de perfil: público, privado, sólo amigos.
 - Drag and drop para reordenar tareas dentro de un board.
 - Historial de cambios de cada board.
 - Seguridad: NextAuth con JWT.
@@ -53,11 +53,11 @@ JITI es una aplicación web que permite a los usuarios crear boards (o tableros)
 - Boards en los que es participante.
 - Tareas pendientes (por fecha de fin y en orden de prioridad).
 - Distintas vistas de board:
-    - Vista de Kanban.
-    - Vista de timeline.
-    - Vista de calendario.
-    - Vista de mind map.
-    - Vista de Gantt.
+  - Vista de Kanban.
+  - Vista de timeline.
+  - Vista de calendario.
+  - Vista de mind map.
+  - Vista de Gantt.
 
 ## Could Have
 
@@ -188,7 +188,7 @@ proyecto/
 - **Container/Presentational Pattern**:
 - Separar lógica de negocio de la presentación
 - Containers manejan estado y lógica
-    - Componentes presentacionales son pure functions
+  - Componentes presentacionales son pure functions
 
 ### Manejo de Estado
 
