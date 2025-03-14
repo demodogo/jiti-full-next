@@ -1,5 +1,7 @@
+import { updateUserSchema } from '@/schemas/user.schema';
 import { usersService } from '@/services/users/users.service';
 import { UpdateUserDTO } from '@/types/models/user.types';
+import { createErrorResponse } from '@/utils/zodErrors';
 import { NextResponse } from 'next/server';
 
 export async function GET(
@@ -36,6 +38,13 @@ export async function PUT(
 				{ error: 'Usuario no encontrado' },
 				{ status: 404 }
 			);
+		}
+
+		const validatedUser = updateUserSchema.safeParse(userData);
+		if (!validatedUser.success) {
+			return NextResponse.json(createErrorResponse(validatedUser.error), {
+				status: 400,
+			});
 		}
 
 		return NextResponse.json(user);

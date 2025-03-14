@@ -2,8 +2,6 @@ import { User } from '@/db/models/user.model';
 import {
 	CreateUserDTO,
 	IUser,
-	LoginDTO,
-	LoginResponse,
 	PROFILE_PRIVACY,
 	UpdatePreferencesDTO,
 	UpdateUserDTO,
@@ -112,7 +110,7 @@ export const usersService = {
 		};
 
 		await user.update({ preferences: cleanPreferences });
-		return cleanPreferences; // Retorna solo las preferencias limpias
+		return cleanPreferences;
 	},
 
 	async getPreferences(id: string): Promise<UserPreferences | null> {
@@ -132,21 +130,5 @@ export const usersService = {
 
 	async validatePassword(user: IUser, password: string): Promise<boolean> {
 		return bcrypt.compare(password, user.password);
-	},
-
-	async login(credentials: LoginDTO): Promise<LoginResponse> {
-		const response = await fetch(`${BASE_URL}/login`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(credentials),
-		});
-		if (!response.ok) throw new Error('Failed to login');
-		return response.json();
-	},
-
-	async getCurrentUser(): Promise<IUser> {
-		const response = await fetch(`${BASE_URL}/me`);
-		if (!response.ok) throw new Error('Failed to fetch current user');
-		return response.json();
 	},
 };

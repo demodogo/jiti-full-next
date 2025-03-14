@@ -1,4 +1,6 @@
+import { updatePreferencesSchema } from '@/schemas/user.schema';
 import { usersService } from '@/services/users';
+import { createErrorResponse } from '@/utils/zodErrors';
 import { NextResponse } from 'next/server';
 
 export async function GET(
@@ -17,6 +19,17 @@ export async function PUT(
 	try {
 		const id = params.id;
 		const preferencesData = await request.json();
+
+		const validatedPreferences =
+			updatePreferencesSchema.safeParse(preferencesData);
+		if (!validatedPreferences.success) {
+			return NextResponse.json(
+				createErrorResponse(validatedPreferences.error),
+				{
+					status: 400,
+				}
+			);
+		}
 
 		const updatedPreferences = await usersService.updatePreferences(
 			id,

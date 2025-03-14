@@ -1,4 +1,6 @@
+import { updatePasswordSchema } from '@/schemas/user.schema';
 import { usersService } from '@/services/users/users.service';
+import { createErrorResponse } from '@/utils/zodErrors';
 import { NextResponse } from 'next/server';
 
 interface Params {
@@ -10,7 +12,7 @@ interface Params {
 export async function PUT(request: Request, { params }: Params) {
 	try {
 		const { id } = params;
-		const { currentPassword, newPassword } = await request.json();
+		const passwordData = await request.json();
 
 		if (!id) {
 			return NextResponse.json(
@@ -19,16 +21,19 @@ export async function PUT(request: Request, { params }: Params) {
 			);
 		}
 
-		if (!currentPassword || !newPassword) {
+		const validatedPassword = updatePasswordSchema.safeParse(passwordData);
+		if (!validatedPassword.success) {
 			return NextResponse.json(
-				{ error: 'Se requieren ambas contraseñas' },
-				{ status: 400 }
+				createErrorResponse(validatedPassword.error),
+				{
+					status: 400,
+				}
 			);
 		}
 
 		const result = await usersService.updatePassword(id, {
-			currentPassword,
-			newPassword,
+			currentPassword: validatedPassword.data.currentPassword,
+			newPassword: validatedPassword.data.newPassword,
 		});
 
 		if (!result.success) {
