@@ -1,0 +1,23 @@
+{
+	"development": {
+		"database": "jiti-db",
+		"dialect": "postgres",
+		"host": "localhost",
+		"password": "12345",
+		"username": "postgres"
+	},
+	"production": {
+		"database": "database_production",
+		"dialect": "mysql",
+		"host": "127.0.0.1",
+		"password": null,
+		"username": "root"
+	},
+	"test": {
+		"database": "jiti-db",
+		"dialect": "postgres",
+		"host": "localhost",
+		"password": "12345",
+		"username": "postgres"
+	}
+}
